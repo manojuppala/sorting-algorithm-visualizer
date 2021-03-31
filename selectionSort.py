@@ -2,17 +2,16 @@ import time
 
 
 def selection(data, drawData, timeTick):
-    sort = 0
-    mini_pos = 0
-    while(sort != (len(data)-1)):
-        mini = data[sort]
-        for i in range(sort, len(data)):
-            if(mini > data[i]):
-                mini = data[i]
-                mini_pos = i
-        data[mini_pos], data[sort] = data[sort], data[mini_pos]
-        sort += 1
-        drawData(
-            data, ['green' if x < sort else 'red' for x in range(len(data))])
-        time.sleep(timeTick)
-    drawData(data, ['green' for x in range(len(data))])
+        for i in range(0,len(data)-1):
+            min_pos=i
+            for j in range(i+1,len(data)):
+                if data[j]< data[min_pos]:
+                  min_pos=j
+            data[min_pos],data[i]=data[i],data[min_pos]
+                
+          
+
+            drawData(
+            data, ['green' if x < i else 'red' for x in range(len(data))])
+            time.sleep(timeTick)
+        drawData(data, ['green' for x in range(len(data))])

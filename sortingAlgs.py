@@ -5,7 +5,7 @@ from bubbleSort import bubble_sort
 from quicksort import quick_sort
 from mergesort import merge_sort
 from selectionSort import selection
-
+from insertionsort import insertionSort
 root = Tk()
 root.title('Sorting Algorithm Visualisation')
 root.maxsize(900, 600)
@@ -70,11 +70,11 @@ def StartAlgorithm():
 
     elif algMenu.get() == 'Selection Sort':
         selection(data, drawData, speedScale.get())
-        bubble_sort(data, drawData, speedScale.get())
+        # bubble_sort(data, drawData, speedScale.get())
 
     elif algMenu.get() == 'Insertion Sort':
-        selection(data, drawData, speedScale.get())
-        bubble_sort(data, drawData, speedScale.get())
+        insertionSort(data, drawData, speedScale.get())
+        # bubble_sort(data, drawData, speedScale.get())
 
     drawData(data, ['green' for x in range(len(data))])
 

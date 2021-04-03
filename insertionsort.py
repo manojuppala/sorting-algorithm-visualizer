@@ -6,11 +6,26 @@ def insertionSort(data,drawData,timeTick):
         cur=data[i]
         j=i-1
         while j >=0 and cur < data[j]:
+            drawData(data ,getcolor(len(data),i,j))
+            time.sleep(timeTick)
+
             data[j+1]=data[j]
             j-=1
         data[j+1]=cur
-        drawData(
-            data, ['green' if x < i else 'red' for x in range(len(data))])
         time.sleep(timeTick)
-    drawData(data, ['green' for x in range(len(data))])
     
+
+def getcolor(length , cur,j_s):
+    colorArray=[]
+    for i in range(length):
+        if i==cur:
+            colorArray.append('pink')
+        elif i==j_s:
+            colorArray.append('cyan')
+        elif i < cur:
+            colorArray.append('green')
+
+        else :
+            colorArray.append('white')
+
+    return colorArray

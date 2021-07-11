@@ -8,10 +8,7 @@ def selection(data, drawData, timeTick):
                 if data[j]< data[min_pos]:
                   min_pos=j
             data[min_pos],data[i]=data[i],data[min_pos]
-                
-          
 
-            drawData(
-            data, ['green' if x < i else 'red' for x in range(len(data))])
+            drawData(data, ['green' if x < i else 'red' for x in range(len(data))])
             time.sleep(timeTick)
         drawData(data, ['green' for x in range(len(data))])
